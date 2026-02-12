@@ -10,6 +10,7 @@ import {
   Link, Flame, Bot, Wand2, Mail, Bell, Target, Code,
   Trophy, Medal, ScrollText, BookOpen, Feather, TreePine,
   Briefcase, Gauge, FolderTree, Monitor, Truck, PlaneTakeoff,
+  Infinity,
   ExternalLink, Calendar, Clock, Activity,
 } from "lucide-react";
 import type { Project } from "@/data/projects";
@@ -21,6 +22,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Link, Flame, Bot, Wand2, Mail, Bell, Target, Code,
   Trophy, Medal, ScrollText, BookOpen, Feather, TreePine,
   Briefcase, Gauge, FolderTree, Monitor, Truck, PlaneTakeoff,
+  Infinity,
 };
 
 const platformLabels: Record<string, { label: string; className: string }> = {
@@ -112,7 +114,13 @@ export default function ProjectCard({ project, index }: { project: Project; inde
             )}
           </motion.div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap justify-end">
+            {project.fullyAutonomous && (
+              <span className="flex items-center gap-1 text-[10px] px-2 py-0.5 rounded-full font-semibold bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+                <Infinity className="w-3 h-3" />
+                Autonomous
+              </span>
+            )}
             {isRecent && (
               <span className="flex items-center gap-1 text-xs text-emerald-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 live-dot" />
