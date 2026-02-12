@@ -70,41 +70,43 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* Fixed nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 nav-blur">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+      <nav className="fixed top-0 left-0 right-0 z-50 nav-blur safe-top">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-2">
+          <a
+            href="#"
+            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+            className="flex items-center gap-2 shrink-0"
+          >
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
               <span className="text-white font-black text-sm">D</span>
             </div>
-            <span className="text-sm font-bold text-white hidden sm:block">
-              Downing AI Builds
+            <span className="text-sm font-bold text-white hidden md:block">
+              NMD Portfolio
             </span>
-          </div>
+          </a>
 
           {/* Search */}
-          <div className="relative">
+          <div className="relative flex-1 max-w-xs">
             <input
               type="text"
-              placeholder="Search projects..."
+              placeholder="Search..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-48 sm:w-64 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all"
+              className="w-full bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all"
             />
           </div>
 
           {/* Sort */}
-          <div className="flex items-center gap-2">
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-gray-300 focus:outline-none focus:border-blue-500/50 appearance-none cursor-pointer"
-            >
-              <option value="recent">Recently Updated</option>
-              <option value="name">Name A-Z</option>
-              <option value="completion">% Complete</option>
-              <option value="started">Date Started</option>
-            </select>
-          </div>
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as SortOption)}
+            className="bg-white/5 border border-white/10 rounded-lg px-2 sm:px-3 py-1.5 text-xs text-gray-300 focus:outline-none focus:border-blue-500/50 cursor-pointer shrink-0"
+          >
+            <option value="recent">Recent</option>
+            <option value="name">A-Z</option>
+            <option value="completion">% Done</option>
+            <option value="started">Oldest</option>
+          </select>
         </div>
       </nav>
 
@@ -200,10 +202,10 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 py-8">
+      <footer className="border-t border-white/5 py-8 pb-safe">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-600 text-sm">
-            Downing AI Builds / Project Portfolio &mdash; {projects.length} Projects &amp; Counting
+            Nicholas MacLeod Downing &mdash; AI Builds &amp; Project Portfolio &mdash; {projects.length} Projects &amp; Counting
           </p>
           <p className="text-gray-700 text-xs mt-1">
             Built with Next.js, Tailwind CSS, and Framer Motion

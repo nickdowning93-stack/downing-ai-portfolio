@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -7,12 +7,50 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0a0a0f",
+};
+
 export const metadata: Metadata = {
-  title: "Downing AI Builds | Project Portfolio",
+  metadataBase: new URL("https://downing-ai-portfolio.vercel.app"),
+  title: "Nicholas MacLeod Downing | AI Builds & Project Portfolio",
   description:
-    "A complete portfolio of every project, venture, and creation by Nick Downing — from enterprise AI platforms to iOS apps to creative writing.",
+    "40+ projects spanning enterprise AI platforms, iOS apps, SaaS tools, and creative ventures. Explore the full portfolio of AI-powered builds by Nicholas MacLeod Downing.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    title: "Nicholas MacLeod Downing's AI Builds & Project Portfolio",
+    description:
+      "40+ projects spanning enterprise AI platforms, iOS apps, SaaS tools, and creative ventures. From Shield AI to Risk Forward AI to custom iOS apps.",
+    siteName: "Downing AI Builds",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Nicholas MacLeod Downing's AI Builds & Project Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nicholas MacLeod Downing's AI Builds & Project Portfolio",
+    description:
+      "40+ projects spanning enterprise AI platforms, iOS apps, SaaS tools, and creative ventures.",
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

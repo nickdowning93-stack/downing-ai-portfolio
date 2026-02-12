@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import { projects } from "@/data/projects";
 
 export default function HeroSection() {
   return (
@@ -54,20 +55,29 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-black mb-4 tracking-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl font-black mb-2 tracking-tight"
         >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">
-            Downing AI
+            Nicholas MacLeod Downing&apos;s
           </span>
-          <br />
-          <span className="text-white/90">Builds</span>
         </motion.h1>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight"
+        >
+          <span className="text-white/90">AI Builds</span>
+          <span className="text-gray-500 font-normal mx-3">&amp;</span>
+          <span className="text-white/70">Project Portfolio</span>
+        </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-gray-400 text-lg max-w-2xl mx-auto mb-2 px-4"
+          className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-2 px-4"
         >
           A complete portfolio of every project, venture, and creation —
           from enterprise AI platforms to iOS apps to creative writing.
@@ -79,7 +89,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-gray-600 text-sm"
         >
-          Built by Nick Downing
+          {projects.length} Projects &amp; Counting
         </motion.p>
       </div>
     </div>

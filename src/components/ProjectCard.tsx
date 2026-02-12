@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Search, FileBarChart, Building, Home, Factory, Handshake,
@@ -96,9 +97,19 @@ export default function ProjectCard({ project, index }: { project: Project; inde
           <motion.div
             animate={isHovered ? { scale: 1.15, rotate: 5 } : { scale: 1, rotate: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg`}
+            className={`w-12 h-12 rounded-xl ${project.logoImage ? "" : `bg-gradient-to-br ${project.gradient}`} flex items-center justify-center shadow-lg overflow-hidden`}
           >
-            <IconComponent className="w-6 h-6 text-white" />
+            {project.logoImage ? (
+              <Image
+                src={project.logoImage}
+                alt={project.displayName}
+                width={48}
+                height={48}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <IconComponent className="w-6 h-6 text-white" />
+            )}
           </motion.div>
 
           <div className="flex items-center gap-2">

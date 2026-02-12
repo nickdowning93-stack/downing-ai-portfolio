@@ -48,6 +48,7 @@ export interface Project {
   liveUrl?: string;
   gradient: string;
   icon: string;
+  logoImage?: string;
   commits?: number;
 }
 
@@ -123,6 +124,7 @@ export const projects: Project[] = [
     completion: 75,
     gradient: "from-blue-500 to-cyan-400",
     icon: "Search",
+    logoImage: "/logos/hub-logo.png",
     commits: 6,
   },
   {
@@ -139,6 +141,7 @@ export const projects: Project[] = [
     completion: 60,
     gradient: "from-indigo-500 to-blue-400",
     icon: "FileBarChart",
+    logoImage: "/logos/hub-logo.png",
     commits: 2,
   },
   {
@@ -155,6 +158,7 @@ export const projects: Project[] = [
     completion: 80,
     gradient: "from-teal-500 to-emerald-400",
     icon: "Building",
+    logoImage: "/logos/hub-logo.png",
     commits: 4,
   },
   {
@@ -315,6 +319,7 @@ export const projects: Project[] = [
     liveUrl: "https://riskforwardai.com",
     gradient: "from-purple-500 to-fuchsia-400",
     icon: "Shield",
+    logoImage: "/logos/riskforwardai-logo.jpg",
     commits: 11,
   },
   {
@@ -427,6 +432,7 @@ export const projects: Project[] = [
     completion: 35,
     gradient: "from-orange-500 to-red-400",
     icon: "Flame",
+    logoImage: "/logos/noble-blaze-logo.png",
     commits: 1,
   },
   {
@@ -443,6 +449,7 @@ export const projects: Project[] = [
     completion: 50,
     gradient: "from-lime-500 to-green-400",
     icon: "Bot",
+    logoImage: "/logos/hub-logo.png",
     commits: 9,
   },
   {
@@ -513,6 +520,7 @@ export const projects: Project[] = [
     completion: 60,
     gradient: "from-indigo-500 to-blue-400",
     icon: "Bell",
+    logoImage: "/logos/alarmie-icon.png",
     commits: 3,
   },
   {
@@ -608,6 +616,7 @@ export const projects: Project[] = [
     completion: 65,
     gradient: "from-blue-700 to-indigo-500",
     icon: "BookOpen",
+    logoImage: "/logos/night-seas-og.png",
   },
   {
     id: "night-seas-book2",
